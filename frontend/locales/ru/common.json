@@ -1,0 +1,97 @@
+{
+  "back": "Назад",
+  "admin": {
+    "users": "Пользователи",
+    "devices": "Устройства",
+    "roles": "Роли",
+    "priorities": "Приоритеты",
+    "statuses": "Этапы",
+    "back": "Назад"
+  },
+  "roles": {
+    "admin": "Администратор",
+    "user": "Пользователь",
+    "tech": "Техник"
+  },
+  "users": {
+    "fullName": "Имя и Фамилия",
+    "firstName": "Имя",
+    "lastName": "Фамилия",
+    "username": "Имя пользователя",
+    "email": "Email",
+    "save": "Сохранить",
+    "error": "Ошибка загрузки пользователей",
+    "actions": "Действия",
+    "edit": "Редактировать",
+    "delete": "Удалить",
+    "new": "Новый пользователь",
+    "create": "Создать",
+    "password": "Пароль",
+    "role": "Роль",
+    "error_create": "Ошибка при создании пользователя",
+    "createSuccess": "Пользователь создан",
+    "changePassword": "Изменить пароль",
+    "newPassword": "Новый пароль",
+    "confirmPassword": "Подтвердите пароль",
+    "resetPassword": "Сбросить пароль",
+    "passwordsDoNotMatch": "Пароли не совпадают",
+    "passwordTooShort": "Пароль должен содержать не менее 8 символов",
+    "passwordResetSuccess": "Пароль успешно изменен",
+    "passwordResetError": "Ошибка при изменении пароля",
+    "error_update": "Ошибка обновления пользователя"
+  },
+  "header": {
+    "title": "Тех. поддержка",
+    "logout": "Выйти"
+  },
+  "tickets": {
+    "submit": "Создать",
+    "uploadFiles": "Загрузить файлы",
+    "files": "Файлы",
+    "deleteFile": "Удалить файл",
+    "deleteTicket": "Удалить заявку",
+    "resolutionNotes": "Примечания по решению",
+    "assignedTechnicians": "Назначенные техники",
+    "updatedAt": "Обновлено",
+    "myTasks": "Незавершённые заявки",
+    "noData": "Заявки не найдены",
+    "error": "Ошибка загрузки задач",
+    "details": "Подробнее",
+    "new": "Новая заявка",
+    "edit": "Изменить",
+    "additional": "Дополнительно",
+    "table": {
+      "user": "Пользователь",
+      "no": "№",
+      "device": "Устройство",
+      "description": "Описание",
+      "priority": "Приоритет",
+      "status": "Статус",
+      "createdAt": "Дата создания",
+      "action": "Действие"
+    }
+  },
+  "devices": {
+    "title": "Устройства",
+    "id": "ID",
+    "idUnique": "ID должен быть уникальным",
+    "new": "Новое устройство",
+    "name": "Название",
+    "type": "Тип устройства",
+    "inventoryNumber": "Инв. номер",
+    "create": "Создать",
+    "edit": "Изменить",
+    "delete": "Удалить",
+    "actions": "Действия",
+    "error": "Ошибка загрузки устройств",
+    "loading": "Загрузка..."
+  },
+  "login": {
+    "title": "Вход в систему",
+    "username": "Логин",
+    "password": "Пароль",
+    "submit": "Войти",
+    "loading": "Вход...",
+    "error": "Ошибка входа"
+  }
+}

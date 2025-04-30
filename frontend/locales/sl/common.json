@@ -1,0 +1,93 @@
+{
+  "back": "Nazaj",
+  "admin": {
+    "users": "Uporabniki",
+    "devices": "Naprave",
+    "roles": "Vloge",
+    "priorities": "Prioritete",
+    "statuses": "Statusi",
+    "back": "Nazaj"
+  },
+  "roles": {
+    "admin": "Administrator",
+    "user": "Uporabnik",
+    "tech": "Tehnik"
+  },
+  "users": {
+    "fullName": "Ime in Priimek",
+    "firstName": "Ime",
+    "lastName": "Priimek",
+    "username": "Uporabniško ime",
+    "email": "E-pošta",
+    "save": "Shrani",
+    "error": "Napaka pri nalaganju uporabnikov",
+    "actions": "Dejanja",
+    "edit": "Uredi",
+    "delete": "Izbriši",
+    "new": "Nov uporabnik",
+    "create": "Ustvari",
+    "password": "Geslo",
+    "changePassword": "Spremeni geslo",
+    "newPassword": "Novo geslo",
+    "confirmPassword": "Potrdi geslo",
+    "resetPassword": "Ponastavi geslo",
+    "passwordsDoNotMatch": "Gesli se ne ujemata",
+    "passwordTooShort": "Geslo mora vsebovati vsaj 8 znakov",
+    "passwordResetSuccess": "Geslo je bilo uspešno spremenjeno",
+    "passwordResetError": "Napaka pri spreminjanju gesla",
+    "error_update": "Napaka pri posodabljanju uporabnika"
+  },
+  "header": {
+    "title": "Dnevnik vzdrževanja",
+    "logout": "Odjava"
+  },
+  "tickets": {
+    "resolutionNotes": "Opombe rešitve",
+    "assignedTechnicians": "Dodeljeni tehniki",
+    "myTasks": "Vrsta okvare ali naročenega opravila",
+    "noData": "Ni najdenih okvar ali opravil",
+    "error": "Napaka pri nalaganju seznama okvar ali opravil",
+    "details": "Podrobnosti",
+    "new": "Nova zahteva",
+    "edit": "Uredi",
+    "additional": "Dodatno",
+    "submit": "Ustvari",
+    "uploadFiles": "Naloži datoteke",
+    "files": "Datoteke",
+    "deleteFile": "Izbriši datoteko",
+    "deleteTicket": "Izbriši zahtevo",
+    "updatedAt": "Posodobljeno",
+    "table": {
+      "user": "Uporabnik",
+      "no": "Št.",
+      "device": "Naprava",
+      "description": "Opis",
+      "priority": "Prednost",
+      "status": "Stanje",
+      "createdAt": "Ustvarjeno",
+      "action": "Akcija"
+    }
+  },
+  "devices": {
+    "title": "Naprave",
+    "id": "ID",
+    "idUnique": "ID mora biti edinstven",
+    "new": "Nova naprava",
+    "name": "Ime",
+    "type": "Tip naprave",
+    "inventoryNumber": "Št. inventarja",
+    "create": "Ustvari",
+    "edit": "Uredi",
+    "delete": "Izbriši",
+    "actions": "Dejanja",
+    "error": "Napaka pri nalaganju naprav",
+    "loading": "Nalaganje..."
+  },
+  "login": {
+    "title": "Prijava v sistem",
+    "username": "Uporabniško ime",
+    "password": "Geslo",
+    "submit": "Prijava",
+    "loading": "Prijavljam..."
+  }
+}

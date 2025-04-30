@@ -1,0 +1,17 @@
+# Файл: docker-compose.yml
+
+services:
+  db:
+    image: postgres:15-alpine # Используем легковесный образ Postgres 15
+    container_name: helpdesk_db_container
+    environment:
+      POSTGRES_USER: helpdesk_user # Имя пользователя БД (можно сменить)
+      POSTGRES_PASSWORD: help0301desk # Пароль пользователя (ОБЯЗАТЕЛЬНО СМЕНИ!)
+      POSTGRES_DB: helpdesk_db # Имя базы данных
+    ports:
+      - "5432:5432" # Проброс порта БД на твой компьютер
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Сохранение данных между перезапусками
+
+volumes:
+  postgres_data: # Именованный volume для данных БД

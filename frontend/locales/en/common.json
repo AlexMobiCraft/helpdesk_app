@@ -1,0 +1,93 @@
+{
+  "back": "Back",
+  "admin": {
+    "users": "Users",
+    "devices": "Devices",
+    "roles": "Roles",
+    "priorities": "Priorities",
+    "statuses": "Statuses",
+    "back": "Back"
+  },
+  "roles": {
+    "admin": "Admin",
+    "user": "User",
+    "tech": "Technician"
+  },
+  "users": {
+    "fullName": "Name and Surname",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "username": "Username",
+    "email": "Email",
+    "save": "Save",
+    "error": "Error loading users",
+    "actions": "Actions",
+    "edit": "Edit",
+    "delete": "Delete",
+    "new": "New user",
+    "create": "Create",
+    "password": "Password",
+    "changePassword": "Change Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "resetPassword": "Reset Password",
+    "passwordsDoNotMatch": "Passwords do not match",
+    "passwordTooShort": "Password must be at least 8 characters long",
+    "passwordResetSuccess": "Password successfully changed",
+    "passwordResetError": "Error changing password",
+    "error_update": "Error updating user"
+  },
+  "header": {
+    "title": "Helpdesk",
+    "logout": "Logout"
+  },
+  "tickets": {
+    "resolutionNotes": "Resolution Notes",
+    "assignedTechnicians": "Assigned Technicians",
+    "myTasks": "Unfinished Tasks",
+    "noData": "No tickets found",
+    "error": "Error loading tickets",
+    "details": "Details",
+    "new": "New Ticket",
+    "edit": "Edit",
+    "additional": "Additional",
+    "submit": "Create",
+    "uploadFiles": "Upload Files",
+    "files": "Files",
+    "deleteFile": "Delete file",
+    "deleteTicket": "Delete ticket",
+    "updatedAt": "Updated At",
+    "table": {
+      "user": "User",
+      "no": "No",
+      "device": "Device",
+      "description": "Description",
+      "priority": "Priority",
+      "status": "Status",
+      "createdAt": "Created At",
+      "action": "Action"
+    }
+  },
+  "devices": {
+    "title": "Devices",
+    "id": "ID",
+    "idUnique": "ID must be unique",
+    "new": "New Device",
+    "name": "Name",
+    "type": "Type",
+    "inventoryNumber": "Inventory #",
+    "create": "Create",
+    "edit": "Edit",
+    "delete": "Delete",
+    "actions": "Actions",
+    "error": "Error loading devices",
+    "loading": "Loading..."
+  },
+  "login": {
+    "title": "Login",
+    "username": "Username",
+    "password": "Password",
+    "submit": "Login",
+    "loading": "Logging in..."
+  }
+}
