@@ -93,6 +93,20 @@
     "error": "Napaka pri nalaganju naprav",
     "loading": "Nalaganje..."
   },
+  "statuses": {
+    "title": "Statusi",
+    "new": "Nov status",
+    "name": "Ime",
+    "description": "Opis",
+    "create": "Ustvari",
+    "edit": "Uredi",
+    "delete": "Izbriši",
+    "actions": "Dejanja",
+    "error": "Napaka pri nalaganju statusov",
+    "error_create": "Napaka pri ustvarjanju statusa",
+    "error_update": "Napaka pri posodabljanju statusa",
+    "loading": "Nalaganje..."
+  },
   "login": {
     "title": "Prijava v sistem",
     "username": "Uporabniško ime",

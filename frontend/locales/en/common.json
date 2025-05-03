@@ -93,6 +93,20 @@
     "error": "Error loading devices",
     "loading": "Loading..."
   },
+  "statuses": {
+    "title": "Statuses",
+    "new": "New Status",
+    "name": "Name",
+    "description": "Description",
+    "create": "Create",
+    "edit": "Edit",
+    "delete": "Delete",
+    "actions": "Actions",
+    "error": "Error loading statuses",
+    "error_create": "Error creating status",
+    "error_update": "Error updating status",
+    "loading": "Loading..."
+  },
   "login": {
     "title": "Login",
     "username": "Username",

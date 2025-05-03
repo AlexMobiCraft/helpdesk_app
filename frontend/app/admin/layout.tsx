@@ -1,8 +1,7 @@
 'use client';
 
 import React from 'react';
-import { AppBar, Toolbar, Container, Button } from '@mui/material';
-import Link from 'next/link';
+import { AppBar, Container } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -11,11 +10,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   return (
     <>
       <AppBar position="static" color="primary">
-        <Toolbar>
-          <Link href="/admin/roles" passHref>
-            <Button color="inherit">{t('roles.title')}</Button>
-          </Link>
-        </Toolbar>
+        {/* Навигационные кнопки удалены */}
       </AppBar>
       <Container maxWidth="lg" sx={{ mt: 4 }}>
         {children}
