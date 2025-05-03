@@ -107,6 +107,21 @@
     "error_update": "Napaka pri posodabljanju statusa",
     "loading": "Nalaganje..."
   },
+  "priorities": {
+    "title": "Prioritete",
+    "new": "Nov prioritet",
+    "name": "Ime",
+    "description": "Opis",
+    "order": "Zaporedje",
+    "create": "Ustvari",
+    "edit": "Uredi",
+    "delete": "Izbriši",
+    "actions": "Dejanja",
+    "error": "Napaka pri nalaganju prioritet",
+    "error_create": "Napaka pri ustvarjanju prioritete",
+    "error_update": "Napaka pri posodabljanju prioritete",
+    "loading": "Nalaganje..."
+  },
   "login": {
     "title": "Prijava v sistem",
     "username": "Uporabniško ime",

@@ -1,8 +1,9 @@
 'use client';
 
 import React from 'react';
-import { AppBar, Container } from '@mui/material';
+import { AppBar, Container, Button } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import Link from 'next/link';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const { t } = useTranslation();
@@ -10,7 +11,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   return (
     <>
       <AppBar position="static" color="primary">
-        {/* Навигационные кнопки удалены */}
+        <Link href="/admin/priorities" passHref>
+          <Button color="inherit">{t('admin.priorities')}</Button>
+        </Link>
       </AppBar>
       <Container maxWidth="lg" sx={{ mt: 4 }}>
         {children}

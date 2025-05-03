@@ -107,6 +107,21 @@
     "error_update": "Error updating status",
     "loading": "Loading..."
   },
+  "priorities": {
+    "title": "Priorities",
+    "new": "New Priority",
+    "name": "Name",
+    "description": "Description",
+    "order": "Order",
+    "create": "Create",
+    "edit": "Edit",
+    "delete": "Delete",
+    "actions": "Actions",
+    "error": "Error loading priorities",
+    "error_create": "Error creating priority",
+    "error_update": "Error updating priority",
+    "loading": "Loading..."
+  },
   "login": {
     "title": "Login",
     "username": "Username",
