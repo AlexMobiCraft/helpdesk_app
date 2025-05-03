@@ -9,6 +9,16 @@
     "back": "Nazaj"
   },
   "roles": {
+    "title": "Vloge",
+    "new": "Nova vloga",
+    "name": "Ime",
+    "description": "Opis",
+    "create": "Ustvari",
+    "edit": "Uredi",
+    "delete": "Izbriši",
+    "actions": "Dejanja",
+    "error": "Napaka pri nalaganju vlog",
+    "loading": "Nalaganje...",
     "admin": "Administrator",
     "user": "Uporabnik",
     "tech": "Tehnik"

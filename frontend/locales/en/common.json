@@ -9,6 +9,16 @@
     "back": "Back"
   },
   "roles": {
+    "title": "Roles",
+    "new": "New Role",
+    "name": "Name",
+    "description": "Description",
+    "create": "Create",
+    "edit": "Edit",
+    "delete": "Delete",
+    "actions": "Actions",
+    "error": "Error loading roles",
+    "loading": "Loading...",
     "admin": "Admin",
     "user": "User",
     "tech": "Technician"
