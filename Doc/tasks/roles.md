@@ -4,11 +4,11 @@
 
 ## 1. Backend (API)
 1. Проверить в `Doc/API_endpoints_V1.1.md` наличие эндпоинтов:
-   - **GET** `/api/admin/roles` — получить список ролей (с фильтрацией, пагинацией).
-   - **GET** `/api/admin/roles/{id}` — получить детали роли.
-   - **POST** `/api/admin/roles` — создать роль.
-   - **PATCH** `/api/admin/roles/{id}` — обновить роль.
-   - **DELETE** `/api/admin/roles/{id}` — удалить роль.
+   - **GET** `/api/v1/users/admin/roles` — получить список ролей (skip, limit).
+   - **GET** `/api/v1/users/admin/roles/{role_id}` — получить детали роли.
+   - **POST** `/api/v1/users/admin/roles` — создать роль.
+   - **PATCH** `/api/v1/users/admin/roles/{role_id}` — обновить роль.
+   - **DELETE** `/api/v1/users/admin/roles/{role_id}` — удалить роль.
 2. Убедиться, что все эндпоинты защищены `Depends(get_current_admin_user)`.
 
 ## 2. Frontend
@@ -19,8 +19,9 @@
    └── RoleList.tsx    # Компонент таблицы ролей
    ```
 2. В `page.tsx`:
-   - Импортировать `useQuery` из React Query для GET `/api/admin/roles`.
+   - Импортировать `useQuery` из React Query для GET `/api/v1/users/admin/roles?skip=<skip>&limit=<limit>`.
    - Отобразить компонент `RoleList`, передав полученные данные.
+   - Реализовать пагинацию (Prev/Next) и фильтрацию по skip/limit аналогично `/admin/devices`.
 3. В `RoleList.tsx`:
    - Использовать MUI-компоненты (`Table`, `TableRow`, `TableCell`, `Button`).
    - Колонки: №, Название роли, Описание, Действия (Редактировать, Удалить).
@@ -58,38 +59,37 @@
    ```
 2. Убедиться, что страница доступна только администраторам.
 
-## 5. Обновление документации
-1. `Doc/PROJECT_STRUCTURE.md`: добавить раздел `admin/roles`.
-2. `Doc/README.md`: обновить секцию Admin, добавить пункт "Роли".
-3. `Doc/Technical_specification.md`: описать UI и поведение списка ролей.
-
-## 6. Тестирование
-1. Unit-тесты для `RoleList.tsx`.
-2. E2E-тесты на создание, редактирование и удаление роли (Cypress или Playwright).
-3. Проверить работу локализации на всех языках.
-
-## 7. Страница создания роли
+## 5. Страница создания роли
 1. Создать `frontend/app/admin/roles/new/page.tsx` и компонент `NewRoleForm.tsx`.
 2. Поля формы: `name`, `description`.
-3. При сабмите: POST `/api/admin/roles`.
+3. При сабмите: POST `/api/v1/users/admin/roles`.
 4. При успехе: уведомление и переход на `/admin/roles`.
 5. При ошибке: отображать `t('roles.error')`.
 6. Локализация новых элементов.
 
-## 8. Страница редактирования роли
+## 6. Страница редактирования роли
 1. Создать `frontend/app/admin/roles/edit/[role_id]/page.tsx` и `EditRoleForm.tsx`.
-2. Загрузить данные роли через GET `/api/admin/roles/{role_id}`.
-3. При сабмите: PATCH `/api/admin/roles/{role_id}`.
+2. Загрузить данные роли через GET `/api/v1/users/admin/roles/{role_id}`.
+3. При сабмите: PATCH `/api/v1/users/admin/roles/{role_id}`.
 4. При успехе: `invalidateQueries(['admin-roles'])` и переход на `/admin/roles`.
 5. При ошибке: отображать `t('roles.error')`.
 6. Локализация новых элементов.
 
-## 9. Стиль и адаптивность
+## 7. Стиль и адаптивность
 1. Использовать MUI-компоненты (`TextField`, `Select`, `Button`, `Grid`/`Stack`).
 2. Обеспечить адаптивность для мобильных устройств.
 
-## 10. Логирование ошибок
+## 8. Логирование ошибок
 1. Клиент: `console.error` или Sentry.
 2. Сервер: логировать ошибки в формате JSON.
+
+## 9. Обновление документации
+1. `Doc/PROJECT_STRUCTURE.md`: добавить раздел `admin/roles`.
+2. `Doc/README.md`: обновить секцию Admin, добавить пункт "Роли".
+3. `Doc/Technical_specification.md`: описать UI и поведение списка ролей.
+
+## 10. Тестирование
+1. Unit-тесты для `RoleList.tsx`.
+2. Проверить работу локализации на всех языках.
 
 ---
