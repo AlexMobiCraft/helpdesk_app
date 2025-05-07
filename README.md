@@ -48,6 +48,7 @@
    ```
 
 #### Бэкенд (FastAPI):
+
 1. Откройте файл `.env` в корне проекта и пропишите:
    ```
    HOST_IP=ВАШ_АКТУАЛЬНЫЙ_IP
@@ -63,27 +64,48 @@
 ---
 
 ### 2.1. Backend (FastAPI + PostgreSQL)
+0. Убедитесь что установлена версия python3.10 или выше
 
 1. Клонировать репозиторий и перейти в корень:
    ```ps1
-   git clone <repo_url> helpdesk_app
+   git clone https://github.com/AlexMobiCraft/helpdesk_app.git helpdesk_app
    cd helpdesk_app
    ```
 
 2. Создать виртуальное окружение и установить зависимости:
    ```ps1
-   python -m venv .venv
-   .venv\Scripts\activate
+   python3 -m venv .venv
+   source .venv/bin/activate
    pip install -r requirements.txt
    ```
 
 3. Запустить БД в Docker:
+
+Если Docker не установлен, выполните:
+   ```ps1
+   sudo apt update
+sudo apt install docker.io
+   ```
+Убедитесь, что Docker установлен:
+   ```ps1
+   docker --version
+   ```
+Создайте группу docker (если не создана автоматически):
+   ```ps1
+sudo groupadd docker
+   ```
+Добавьте текущего пользователя в группу docker:
+   ```ps1
+   sudo usermod -aG docker $USER
+   ```
+
    ```ps1
    docker-compose up -d db
    ```
 
 4. Применить миграции:
    ```ps1
+   source .venv/bin/activate
    alembic upgrade head
    ```
 
@@ -93,6 +115,17 @@
    ```
 
 ### 2.2. Frontend (Next.js)
+0. Убедитесь что установлен Node.js и npm
+Если не установлен, выполните:
+   ```ps1
+   sudo apt update
+sudo apt install nodejs npm
+   ```
+Убедитесь, что Node.js и npm установлены:
+   ```ps1
+   node --version
+   npm --version
+   ```
 
 1. Перейти в папку фронтенда:
    ```ps1
