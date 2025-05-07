@@ -18,6 +18,66 @@ echo "Логи Backend: $BACKEND_LOG_FILE"
 echo "Логи Frontend: $FRONTEND_LOG_FILE"
 echo ""
 
+# Очищаем/создаем лог-файлы для текущего запуска
+# Backend
+> "$BACKEND_LOG_FILE"
+# Frontend
+> "$FRONTEND_LOG_FILE"
+
+echo "Скрипт запущен из: $SCRIPT_DIR"
+echo "Корневая директория проекта: $PROJECT_ROOT_DIR"
+echo "Лог бэкенда: $BACKEND_LOG_FILE"
+echo "Лог фронтенда: $FRONTEND_LOG_FILE"
+
+# --- Проверка и запуск Docker-контейнера БД (PostgreSQL через Docker Compose) ---
+echo "
+== Проверка и запуск контейнера БД (PostgreSQL через Docker Compose) ==" | tee -a "$BACKEND_LOG_FILE"
+
+# Проверяем, существует ли docker-compose.yml или docker-compose.yaml
+COMPOSE_FILE=""
+if [ -f "docker-compose.yml" ]; then
+    COMPOSE_FILE="docker-compose.yml"
+elif [ -f "docker-compose.yaml" ]; then
+    COMPOSE_FILE="docker-compose.yaml"
+fi
+
+if [ -z "$COMPOSE_FILE" ]; then
+    echo "ПРЕДУПРЕЖДЕНИЕ: Файл docker-compose.yml или docker-compose.yaml не найден. Пропуск попытки запуска БД через Docker Compose." | tee -a "$BACKEND_LOG_FILE"
+else
+    echo "Проверка состояния контейнера 'db'..." | tee -a "$BACKEND_LOG_FILE"
+    DB_CONTAINER_ID=$(docker-compose -f "$COMPOSE_FILE" ps -q db 2>/dev/null)
+    DB_IS_RUNNING=false
+    if [ -n "$DB_CONTAINER_ID" ]; then
+        if docker ps -q --filter "id=$DB_CONTAINER_ID" --filter "status=running" | grep -q .; then
+            DB_IS_RUNNING=true
+        fi
+    fi
+
+    if [ "$DB_IS_RUNNING" = true ]; then
+        echo "Контейнер БД 'db' уже запущен." | tee -a "$BACKEND_LOG_FILE"
+    else
+        echo "Контейнер БД 'db' не запущен или не в состоянии 'running'. Попытка запуска через 'docker-compose -f $COMPOSE_FILE up -d db'..." | tee -a "$BACKEND_LOG_FILE"
+        # Запускаем docker-compose и выводим его stdout и stderr в лог бэкенда, а также в консоль
+        if docker-compose -f "$COMPOSE_FILE" up -d db 2>&1 | tee -a "$BACKEND_LOG_FILE"; then
+            # Проверяем код возврата docker-compose. tee всегда возвращает 0, поэтому проверяем pipefail, если возможно, или статус docker-compose.
+            # Для простоты, если команда прошла без явной ошибки от tee, считаем успешным.
+            # Более надежная проверка кода возврата docker-compose потребовала бы временного файла или более сложной конструкции.
+            # В данном случае, если 'docker-compose up' выведет ошибку, она будет видна и в консоли, и в логе.
+            # И 'set -e' должен прервать скрипт, если сама команда docker-compose вернет ненулевой код.
+            echo "Контейнер БД 'db' запущен (или попытка запуска произведена). Проверьте вывод выше на наличие ошибок." | tee -a "$BACKEND_LOG_FILE"
+            echo "Ожидание несколько секунд для инициализации PostgreSQL..." | tee -a "$BACKEND_LOG_FILE"
+            sleep 15 # Даем время PostgreSQL внутри контейнера полностью запуститься
+        else
+            # Эта ветка 'else' может не выполниться, если 'set -e' прервет скрипт раньше из-за ошибки docker-compose
+            echo "ОШИБКА: Не удалось запустить контейнер БД 'db' с помощью docker-compose." | tee -a "$BACKEND_LOG_FILE"
+            echo "Пожалуйста, проверьте конфигурацию $COMPOSE_FILE и логи Docker (docker-compose -f $COMPOSE_FILE logs db)." | tee -a "$BACKEND_LOG_FILE"
+            echo "Бэкенд, скорее всего, не сможет запуститься корректно без базы данных."
+            # exit 1; # Можно добавить явный выход, если set -e не сработает как ожидается из-за пайплайна с tee
+        fi
+    fi
+fi
+echo "Проверка Docker БД завершена." | tee -a "$BACKEND_LOG_FILE"
+
 # --- Backend (FastAPI) ---
 echo "[1/2] Запуск Backend (FastAPI)..."
 # Мы уже в PROJECT_ROOT_DIR
